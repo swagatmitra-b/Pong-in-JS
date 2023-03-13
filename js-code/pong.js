@@ -77,13 +77,6 @@ class Pong {
       }
     }
 
-    if (rightOutbound || leftOutbound) {
-      console.log("Reloading page in 1 second...");
-      setTimeout(() => {
-        console.log("reloading page");
-        location.href = location.href;
-      }, 1900);
-    }
 
     function scoreboard() {
       if (rightOutbound) {
