@@ -5,11 +5,15 @@ class Pong {
       y: canvasHeight / 2,
     };
 
-    this.direction = [1, -1]
+    this.direction = [1, -1];
 
     this.velocity = {
-      x: Math.floor(Math.random()*5 + 2) * this.direction[Math.floor(Math.random()*this.direction.length)],
-      y: Math.floor(Math.random()*3 + 2) * this.direction[Math.floor(Math.random()*this.direction.length)]
+      x:
+        Math.floor(Math.random() * 5 + 2) *
+        this.direction[Math.floor(Math.random() * this.direction.length)],
+      y:
+        Math.floor(Math.random() * 3 + 2) *
+        this.direction[Math.floor(Math.random() * this.direction.length)],
     };
 
     this.radius = radius;
@@ -74,22 +78,25 @@ class Pong {
     }
 
     if (rightOutbound || leftOutbound) {
-        location.reload()
+      console.log("Reloading page in 1 second...");
+      setTimeout(() => {
+        console.log("reloading page");
+        location.href = location.href;
+      }, 1900);
     }
 
     function scoreboard() {
       if (rightOutbound) {
         let playerA = document.getElementById("A");
-        playerA.style.fontSize = "1.7rem"
+        playerA.style.fontSize = "1.7rem";
         playerA.innerText = "WINS!";
       } else if (leftOutbound) {
         let playerB = document.getElementById("B");
-        playerB.style.fontSize = "1.7rem"
+        playerB.style.fontSize = "1.7rem";
         playerB.innerText = "WINS!";
       }
     }
     scoreboard.bind(this)();
-
   }
 }
 
