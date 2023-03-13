@@ -74,9 +74,7 @@ class Pong {
     }
 
     if (rightOutbound || leftOutbound) {
-        setTimeout(() => {
-            location.reload()
-        }, 1900)
+        location.reload()
     }
 
     function scoreboard() {
