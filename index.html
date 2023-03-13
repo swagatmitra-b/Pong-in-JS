@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js" type="module" defer></script>
+    <link rel="stylesheet" href="./light.css">
+  </head>
+  <body>
+    <div class="gamebox">
+      <div class="playerA">
+        <h1 style="font-family: 'Gill Sans', sans-serif">PLAYER A</h1>
+        <h2 id="A"></h2>
+        <a id="controls">HOW TO PLAY</a>
+      </div>
+    <canvas id="game-screen"></canvas>
+      <div class="playerB">
+        <h1 style="font-family: 'Gill Sans', sans-serif">PLAYER B</h2>
+        <h2 id="B"></h2>
+      </div>
+    </div>
+    <div id="show-controls">
+      <h3>Game Controls</h3>
+      <p>Press 'P' to play or pause. <br>Press 'Space' to reset the game and 'R' to speed up.</p>
+      <h3>Bat Controls</h3>
+      <p>Press 'W, S' and 'ArrowUp, ArrowDown' keys to move the left and right bats up and down respectively.</p>
+      <p class="ps">PS - You may find a secret DarkMode key. (It's an alphabet!)</p>
+    </div>
+    <a id="cross">X</a>
+  </body>
+
+
+  <script>
+    let controls = document.getElementById("controls")
+    let controlOverlay = document.getElementById("show-controls")
+    let gamebox = document.getElementsByClassName("gamebox")
+    let cross = document.getElementById("cross")
+    let csstoggle = document.getElementsByTagName("link")
+    let lightps = document.getElementsByClassName("ps")
+    
+    controls.addEventListener("click", () => {
+      controlOverlay.style.display = 'block'
+      gamebox[0].style.opacity = '0.5'
+      cross.style.display = "block"
+    })
+
+    cross.addEventListener("click", () => {
+      controlOverlay.style.display = 'none'
+      gamebox[0].style.opacity = '1'
+      cross.style.display = "none"
+    })
+
+    document.addEventListener("keypress", (e) => {
+      let attrVal = csstoggle[0].getAttribute("href")
+      let dark = "./dark.css"
+      let light = "./light.css"
+      if (e.key == "m") {
+        if (attrVal == light) {
+          csstoggle[0].setAttribute("href", dark)
+          lightps[0].textContent = "WELCOME TO DARK MODE!"
+        }
+        else {
+          csstoggle[0].setAttribute("href", light)
+          lightps[0].textContent = "PS - You may find a secret DarkMode key. (It's an alphabet!)"
+        }
+      }
+    })
+
+  
+
+  </script>
+</html>

@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-image: url(./photo-1520034475321-cbe63696469a.jpg);
+  }
+
+  #game-screen {
+    border: 2px solid azure;
+    background: transparent
+  }
+
+  .gamebox {
+    width: 1440px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  h1 {
+    color: azure;
+  }
+
+  h2 {
+    color: azure;
+    font-family: Cambria;
+    margin-top: 50px;
+    margin-left: 40px;
+  }
+
+  .playerA {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #controls {
+    position: relative;
+    color: azure;
+    font-family: 'Gill Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 160px ;
+    cursor: pointer;
+    right: 8px;
+  }
+
+  #show-controls {
+    padding: 30px 30px;
+    height: 450px;
+    width: 500px;
+    display: none;
+    background: lightblue;
+    opacity: 0.9;
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  p {
+    padding: 15px 0px;
+    font-size: 1.3rem;
+  }
+
+  #cross {
+    display: none;
+    position: absolute;
+    left: 958px;
+    bottom: 564px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    color: azure;
+  }
+
+  p.ps {
+    font-size: 0.9rem;
+  }
