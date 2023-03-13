@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./index.js" type="module" defer></script>
-    <link rel="stylesheet" href="./light.css">
+    <script src="./js-code/index.js" type="module" defer></script>
+    <link rel="stylesheet" href="./css/light.css">
   </head>
   <body>
     <div class="gamebox">
@@ -54,8 +54,8 @@
 
     document.addEventListener("keypress", (e) => {
       let attrVal = csstoggle[0].getAttribute("href")
-      let dark = "./dark.css"
-      let light = "./light.css"
+      let dark = "./css/dark.css"
+      let light = "./css/light.css"
       if (e.key == "m") {
         if (attrVal == light) {
           csstoggle[0].setAttribute("href", dark)

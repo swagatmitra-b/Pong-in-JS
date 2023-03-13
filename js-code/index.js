@@ -2,7 +2,7 @@ import Bat from "./bat.js";
 import Pong from "./pong.js";
 import Control from "./controls.js";
 
-let control = document.getElementById("controls")
+let control = document.getElementById("controls");
 
 let canvas = document.getElementById("game-screen");
 let ctx = canvas.getContext("2d");
@@ -31,23 +31,22 @@ batRight.render(ctx);
 
 ball.render(ctx);
 
-
 function gameLoop() {
-    if (runState) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        batLeft.update(canvas.height);
-        batLeft.render(ctx);
-        batRight.update(canvas.height);
-        batRight.render(ctx);
-        
-        ball.update(canvas.width, canvas.height);
-        ball.render(ctx);
+  if (runState) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    batLeft.update(canvas.height);
+    batLeft.render(ctx);
+    batRight.update(canvas.height);
+    batRight.render(ctx);
+
+    ball.update(canvas.width, canvas.height);
+    ball.render(ctx);
 
     requestAnimationFrame(gameLoop);
   }
 }
 
-let animate = requestAnimationFrame(gameLoop)
+let animate = requestAnimationFrame(gameLoop);
 
 function run() {
   document.addEventListener("keypress", (e) => {
@@ -59,18 +58,15 @@ function run() {
       requestAnimationFrame(gameLoop);
     }
     if (e.key == " ") {
-      location.reload()
+      location.reload();
     }
   });
 
-  control.addEventListener("click", (e) => {
+  control.addEventListener("click", () => {
     if (runState) {
       runState = !runState;
-      requestAnimationFrame(gameLoop); 
     }
-  })
+  });
 }
 
-
 run();
-
